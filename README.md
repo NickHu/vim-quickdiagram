@@ -16,3 +16,9 @@ It takes about 15 seconds for the reMarkable 2 to dump its framebuffer, so this
 script is ran asynchronously on neovim.
 
 TODO: support reMarkable 1
+
+### screenshot and crop with scrot
+
+```vim
+let g:quickdiagram_command="scrot -s -o /dev/stdout | convert - -trim "
+```

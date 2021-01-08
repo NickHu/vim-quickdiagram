@@ -14,4 +14,4 @@ skipbytes=`printf "%d" $((16#$addr))`
 dd if=/proc/$pid/mem bs=1 count=2628288 skip=$skipbytes > /tmp/out.data
 EOF
 
-scp -i $REMARKABLE_SSH_KEY -q root@$REMARKABLE_IP:/tmp/out.data /dev/stdout | convert -depth 8 -size 1872x1404+0 gray:- -rotate -90 -chop 100x0 -trim "$1.png"
+scp -i $REMARKABLE_SSH_KEY -q root@$REMARKABLE_IP:/tmp/out.data /dev/stdout | convert -depth 8 -size 1872x1404+0 gray:- -rotate -90 -chop 100x0 -trim "$1"
